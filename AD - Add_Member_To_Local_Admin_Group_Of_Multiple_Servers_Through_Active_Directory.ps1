@@ -82,6 +82,8 @@ function Get-AllOrganizationalServers {
 ##
 
 foreach ($Server in Get-AllOrganizationalServers) {
+    Write-Host -NoNewLine "Press any key to continue with $Server...";
+    $null = $Host.UI.RawUI.ReadKey('NoEcho,IncludeKeyDown');
 # Check PS version and bail.
     if (Invoke-Command -ComputerName $Server -ScriptBlock {$PSVersionTable.PSVersion.Major -lt 2}) {
         Write-Host "IMPORTANT: Powershell version of <<$Server>> is too low, upgrade it and retry!" -ForegroundColor Red

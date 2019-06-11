@@ -17,7 +17,6 @@
 ##
 #                                                   Script Parameters
 ##
-
 Param (
     [String]$Member,
     [String]$Domain = $env:userdomain,
